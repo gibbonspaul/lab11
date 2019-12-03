@@ -1,0 +1,117 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class SciCalculator {
+
+    public static void main(String[] args) {
+
+        // condition to break the while loop
+        int option = 5; // Just to get the while loop going
+        double result = 0;
+        double firstNum = 0;
+        double secondNum = 0;
+        int count = 0;
+        double value = 0;
+        Scanner scnr = new Scanner(System.in);
+
+        System.out.println("Current Result: " + result + "\n");
+
+        while( option != 0 ) {
+            if ( option > 0 && option < 7) {
+                System.out.println("Calculator Menu ");
+                System.out.println("--------------- ");
+                System.out.println("0. Exit Program ");
+                System.out.println("1. Addition ");
+                System.out.println("2. Subtraction ");
+                System.out.println("3. Multiplication ");
+                System.out.println("4. Division ");
+                System.out.println("5. Exponentiation ");
+                System.out.println("6. Logarithm ");
+                System.out.println("7. Display Average \n");
+            }
+
+            System.out.println("Enter Menu Selection: ");
+            option = scnr.nextInt();
+
+            // If statements to do the different operations
+            if (option == 1) {
+                System.out.println("Enter first operand: ");
+                firstNum = scnr.nextDouble();
+                System.out.println("Enter second operand: ");
+                secondNum = scnr.nextDouble();
+                value = firstNum + secondNum;
+                System.out.println("Current Result: " + value);
+                result = result + value;
+                count++;
+            } else if (option == 2) {
+                System.out.println("Enter first operand: ");
+                firstNum = scnr.nextDouble();
+                System.out.println("Enter second operand: ");
+                secondNum = scnr.nextDouble();
+                value = firstNum - secondNum;
+                System.out.println("Current Result: " + value);
+                result = result + value;
+                count++;
+            } else if (option == 3) {
+                System.out.println("Enter first operand: ");
+                firstNum = scnr.nextDouble();
+                System.out.println("Enter second operand: ");
+                secondNum = scnr.nextDouble();
+                value = firstNum * secondNum;
+                System.out.println("Current Result: " + value);
+                result = result + value;
+                count++;
+
+            } else if (option == 4) {
+                System.out.println("Enter first operand: ");
+                firstNum = scnr.nextDouble();
+                System.out.println("Enter second operand: ");
+                secondNum = scnr.nextDouble();
+                value = firstNum / secondNum;
+                System.out.println("Current Result: " + value);
+                result = result + value;
+                count++;
+
+            } else if (option == 5) {
+                System.out.println("Enter first operand: ");
+                firstNum = scnr.nextDouble();
+                System.out.println("Enter second operand: ");
+                secondNum = scnr.nextDouble();
+
+                value = Math.pow(firstNum, secondNum);
+                result = result + value;
+                System.out.println("Current Result: " + result + "\n");
+
+                count++;
+            } else if (option == 6) {
+                System.out.println("Enter first operand: ");
+                firstNum = scnr.nextDouble();
+                System.out.println("Enter second operand: ");
+                secondNum = scnr.nextDouble();
+                value = Math.log(secondNum) / Math.log(firstNum);
+                result = result + value;
+                System.out.println("Current Result: " + result + "\n");
+                count++;
+            } else if (option == 7) {
+                if(count == 0){
+                    System.out.println("Error: No calculations yet to average! \n");
+                }
+                else{
+                System.out.println("Sum of calculations: " + result);
+                System.out.println("Number of calculations: " + count);
+                System.out.println("Average of calculations " + result/count);
+                System.out.println("Current Result: " + result + "\n");
+                count++;
+                }
+            }
+            else if(option == 0) {
+                System.out.println("Thanks for using this calculator. Goodbye! ");
+            }
+            else {
+                System.out.println("Error: Invalid selection! \n");
+            }
+
+
+        }
+    }
+}
